@@ -23,8 +23,7 @@ Google is publishing a [lot of scopes](http://gluu.co/google-scopes). This remin
 coding LDAP schema in their code. This leads to a tight bundling of the application with the security 
 infrastructure.
 
-A simpler solution would be nice too. How many developers know understand when to use the Hybrid Flow? 
-We're torchuring developers with a lot of mumbo-jumbo.
+A simpler identity federation solution would be nice too. How many developers  understand the OpenID Connect Hybrid Flow, and when to use it? We're torchuring developers with a lot of mumbo-jumbo.
 
 Ever the optimist, I think we can do it faster as we are working with some functional pieces, and we just 
 need to fill in some gaps. With UMA Core, OAuth2 Resource Registration, JWT and JOSE, we have many 
