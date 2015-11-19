@@ -9,7 +9,8 @@ The policy is generally limited to "the user (or the organization) approved the 
 It doesn't leave a lot of room for the person to set more granular polcies--for example, maybe I only want 
 to release information for 12 hours? 
 
-What if instead of the OpenID Connect access token, we were to  use an UMA RPT token? 
+What if instead of the OpenID Connect access token, we were to  use an UMA RPT token to protect a 
+user_info-like endpoint?
 
 Using the UMA RPT would be more conducive for situations where a person needs to share identity information 
 within a network of  related clients. 
