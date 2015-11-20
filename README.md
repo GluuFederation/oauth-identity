@@ -33,5 +33,5 @@ of the pieces we need to make a better identity federation stack.
 
  - Use UMA RPT token instead of OpenID Connect access token
  - No HTTP redirects -- this is one of the weakest points of security
- - Client crypto signing -- its gotten easier, and relying on TLS is not enough.
- 
+ - Minimal optionality
+ - Client signing as profile
