@@ -2,12 +2,15 @@
 
 One of the weaknesses of OpenID Connect is that it conflates the Authorization Server and the Resource Server. 
 This leads to challenges when a client needs to call other services which have not been authorized 
-by the person to access any identity information. 
+by the person to access any identity information.
+
+OpenID Connect also has problems when identity information resides on more than one OpenID Provider. While
+OpenID Connect has some mention of [Aggregated and Distributed Claims] (http://openid.net/specs/openid-connect-core-1_0.html#AggregatedDistributedClaims), its not well flushed out.
 
 OpenID Connect doesn't enable us to map policies to different scopes, as it uses scopes to group user claims. 
 The policy is generally limited to "the user (or the organization) approved the release of information."
 It doesn't leave a lot of room for the person to set more granular polcies--for example, maybe I only want 
-to release information for 12 hours? 
+to release information for 12 hours?
 
 What if instead of the OpenID Connect access token, we were to  use an UMA RPT token to protect a 
 user_info-like endpoint?
