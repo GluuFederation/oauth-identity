@@ -1,36 +1,28 @@
 # oauth-identity
 
-One of the weaknesses of OpenID Connect is that it conflates the Authorization Server and the Resource Server. 
-This leads to challenges when a client needs to call other services which have not been authorized 
-by the person to access any identity information.
+One of the weaknesses of OpenID Connect is that it conflates the Authorization Server and the Resource Server. This leads to challenges when a client needs to call other services which have not been authorized by the person to access any identity information. Consider the diagram below:
 
-OpenID Connect also has problems when identity information resides on more than one OpenID Provider. While
-OpenID Connect has some mention of [Aggregated and Distributed Claims] (http://openid.net/specs/openid-connect-core-1_0.html#AggregatedDistributedClaims), its not well flushed out.
+![image](https://raw.githubusercontent.com/GluuFederation/oauth-identity/master/img/Multi-API%20Backend.png)
 
-OpenID Connect doesn't enable us to map policies to different scopes, as it uses scopes to group user claims. 
-The policy is generally limited to "the user (or the organization) approved the release of information."
-It doesn't leave a lot of room for the person to set more granular polcies--for example, maybe I only want 
-to release information for 12 hours?
+What if the doSomething API needs information about the user that is not known by the 
+original Relying Party? There is no way to create policy in the OpenID Connect provider
+to allow the doSomething API to gather the required claims!
 
-What if instead of the OpenID Connect access token, we were to  use an UMA RPT token to protect a 
-user_info-like endpoint?
+OpenID Connect doesn't enable us to map policies to different scopes, as it uses scopes to group user claims. The policy is generally limited to "the user (or the organization) approved the release of information." It doesn't leave a lot of room for the person to set more granular polcies--for example, maybe I only want to release information for 12 hours?
 
-Using the UMA RPT would be more conducive for situations where a person needs to share identity information 
-within a network of  related clients. 
+OpenID Connect also has problems when identity information resides on more than one OpenID Provider. While OpenID Connect has some mention of [Aggregated and Distributed Claims] (http://openid.net/specs/openid-connect-core-1_0.html#AggregatedDistributedClaims), it is not well flushed out.
 
-Also stepped-up authentication is better handled by  UMA, which I think is one of the critical requirements 
-for security.  
+What if instead of the OpenID Connect access token, we were to  use an UMA RPT token to protect a user_info-like endpoint?
 
-One other optimization that UMA offers is that the client developer doesn't need to know about scopes. 
-Google is publishing a [lot of scopes](http://gluu.co/google-scopes). This reminds me of developers hard 
-coding LDAP schema in their code. This leads to a tight bundling of the application with the security 
-infrastructure.
+Using the UMA RPT would be more conducive for situations where a person needs to share identity information within a network of  related clients. 
+
+Also stepped-up authentication is better handled by  UMA, which I think is one of the critical requirements for security.  
+
+One other optimization that UMA offers is that the client developer doesn't need to know about scopes. Google is publishing a [lot of scopes](http://gluu.co/google-scopes). This reminds me of developers hard coding LDAP schema in their code. This leads to a tight bundling of the application with the security infrastructure.
 
 A simpler identity federation solution would be nice too. How many developers  understand the OpenID Connect Hybrid Flow, and when to use it? We're torchuring developers with a lot of mumbo-jumbo.
 
-Ever the optimist, I think we can do it faster as we are working with some functional pieces, and we just 
-need to fill in some gaps. With UMA Core, OAuth2 Resource Registration, JWT and JOSE, we have many 
-of the pieces we need to make a better identity federation stack.
+Ever the optimist, I think we can do it faster as we are working with some functional pieces, and we just need to fill in some gaps. With UMA Core, OAuth2 Resource Registration, JWT and JOSE, we have many of the pieces we need to make a better identity federation stack.
 
 ## Requirements
 
@@ -38,3 +30,5 @@ of the pieces we need to make a better identity federation stack.
  - No HTTP redirects -- this is one of the weakest points of security
  - Minimal optionality
  - Client signing as profile
+
+
