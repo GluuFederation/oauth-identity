@@ -25,7 +25,7 @@ While OpenID Connect took five years to develop, ever the optimist, I think we c
 
 ## Requirements
 
- - Use UMA RPT token instead of OpenID Connect access token
+ - Use UMA RPT token instead of OpenID Connect access token to protect user_info endpoint
  - No HTTP redirects -- this is one of the weakest points of security
  - Minimal optionality
  - Client signing as profile
