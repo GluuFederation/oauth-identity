@@ -11,7 +11,7 @@ OpenID Connect doesn't enable us to map policies to different scopes, as it uses
 
 OpenID Connect also has problems when identity information resides on more than one OpenID Provider. While OpenID Connect has some mention of [Aggregated and Distributed Claims] (http://openid.net/specs/openid-connect-core-1_0.html#AggregatedDistributedClaims), it is not well flushed out.
 
-What if instead of the OpenID Connect access token, we were to  use an UMA RPT token to protect a user_info-like endpoint?
+What if instead of the OpenID Connect access token, we were to use an UMA RPT token to protect a user_info-like endpoint?
 
 Using the UMA RPT would be more conducive for situations where a person needs to share identity information within a network of  related clients. 
 
@@ -21,7 +21,7 @@ One other optimization that UMA offers is that the client developer doesn't need
 
 A simpler identity federation solution would be nice too. How many developers  understand the OpenID Connect Hybrid Flow, and when to use it? We're torchuring developers with a lot of mumbo-jumbo.
 
-While OpenID Connect took five years to develop, ever the optimist, I think we create a new identity federation standard  faster than that, as we are working with some functional pieces, and we just need to fill in some gaps. With UMA Core, OAuth2 Resource Registration, JWT and JOSE, we have many of the pieces we need to make a more functionaly identity federation stack for today's micorservices / cloud infastructure.
+While OpenID Connect took five years to develop, ever the optimist, I think we create a new identity federation standard  faster than that, as have some existing pieces, and we just need to fill in some gaps. With UMA Core, OAuth2 Resource Registration, JWT and JOSE, we have many of the pieces we need to make a more functiona identity federation stack for today's micorservices / cloud infastructure.
 
 ## Requirements
 
