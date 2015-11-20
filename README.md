@@ -1,12 +1,11 @@
 # oauth-identity
 
-One of the weaknesses of OpenID Connect is that it conflates the Authorization Server and the Resource Server. This leads to challenges when a client needs to call other services which have not been authorized by the person to access any identity information. Consider the diagram below:
+One of the weaknesses of OpenID Connect is that the OpenID Provider (OP) conflates the Authorization Server and the Resource Server. This leads to challenges when the OpenID Connect Relying Party (RP) needs to call API's which are not themselves clients of the OP. Consider the diagram below:
 
 <img src="https://raw.githubusercontent.com/GluuFederation/oauth-identity/master/img/Multi-API%20Backend.png" width="400">
 
-What if the doSomething API needs information about the user that is not known by the 
-original Relying Party? There is no way to create policy in the OpenID Connect provider
-to allow the doSomething API to gather the required claims!
+What if the /doSomething API needs information about the user that is not known by the 
+original Relying Party? There is no way to create policy in the OP to allow the doSomething API to gather the required claims!
 
 OpenID Connect doesn't enable us to map policies to different scopes, as it uses scopes to group user claims. The policy is generally limited to "the user (or the organization) approved the release of information." It doesn't leave a lot of room for the person to set more granular polcies--for example, maybe I only want to release information for 12 hours?
 
