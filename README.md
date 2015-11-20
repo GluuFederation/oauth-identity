@@ -2,7 +2,7 @@
 
 One of the weaknesses of OpenID Connect is that it conflates the Authorization Server and the Resource Server. This leads to challenges when a client needs to call other services which have not been authorized by the person to access any identity information. Consider the diagram below:
 
-![image](https://raw.githubusercontent.com/GluuFederation/oauth-identity/master/img/Multi-API%20Backend.png | width=400)
+<img src="https://raw.githubusercontent.com/GluuFederation/oauth-identity/master/img/Multi-API%20Backend.png" width="400">
 
 What if the doSomething API needs information about the user that is not known by the 
 original Relying Party? There is no way to create policy in the OpenID Connect provider
