@@ -29,5 +29,6 @@ While OpenID Connect took five years to develop, ever the optimist, I think we c
  - No HTTP redirects -- this is one of the weakest points of security
  - Minimal optionality
  - Client signing as profile
+ - Perhaps make use of JSON-LD signatures and [OpenCreds](http://opencreds.org) ?
 
 
